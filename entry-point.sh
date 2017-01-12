@@ -9,4 +9,4 @@ if [ ! -f $fileName ]
 then
    wget $fileUrl -O $fileName
 fi
-java -jar jarOptions $fileName --spring.config.location=./conf/$confName springOptions >> /var/lib/logs/out.txt
+java -jar $jarOptions $fileName --spring.config.location=./conf/$confName $springOptions >> /var/lib/logs/out.txt
