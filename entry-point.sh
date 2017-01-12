@@ -2,7 +2,7 @@
 fileName=${FILE_NAME:-app.jar}
 filePath=/var/home/app/$fileName
 fileUrl=${FILE_URL:-app.jar}
-if [! -f "$filePath" ];
+if [ ! -f $filePath ]
 then
    wget $fileUrl -O $filePath
 fi
