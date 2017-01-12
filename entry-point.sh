@@ -1,9 +1,9 @@
 #!/bin/sh
 fileName=${FILE_NAME:-app.jar}
-filePath=/var/home/app/$fileName
 fileUrl=${FILE_URL:-app.jar}
-if [ ! -f $filePath ]
+cd /var/home/app
+if [ ! -f $fileName ]
 then
-   wget $fileUrl -O $filePath
+   wget $fileUrl -O $fileName
 fi
-java -jar $filePath --spring.config.location=/var/home/app/conf/application.yml >> /var/lib/logs/out.txt
+java -jar $fileName --spring.config.location=/var/home/app/conf/application.yml >> /var/lib/logs/out.txt
